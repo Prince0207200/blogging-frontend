@@ -1,14 +1,16 @@
 import React from 'react'
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 const creteArticle = async (values) => {
     console.log("creteArticle", { values });
 
-    const { data } = await axios.post(
-        `https://blogging-website-backendd.onrender.com/api/articles`,
-        { article: {...values.values} }
-      );
+    
+
+      const { data } = await axios.post( `https://blogging-website-backendd.onrender.com/api/articles`,
+         { article: {...values.values} }
+         );
 
       console.log("creteArticleresult", { data });
 
@@ -32,4 +34,3 @@ export default function useCreateArticle() {
 
   return { isCreating, createArticle };
 }
-

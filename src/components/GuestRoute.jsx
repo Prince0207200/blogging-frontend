@@ -4,8 +4,6 @@ import { IS_AUTHENTICATED } from "../constants";
 
 function GuestRoute() {
   const isAuth = IS_AUTHENTICATED;
-    // const isAuth = false;
-
 
   if (isAuth) return <Navigate to="/" />;
 
